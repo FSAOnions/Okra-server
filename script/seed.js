@@ -49,8 +49,8 @@ async function seed() {
     product_type: "Drinks",
     assets: {
       name: "coffee cup",
-      source: `${localHost}/CoffeeCup/obj/coffee_cup.obj`,
-      mtl: `${localHost}/CoffeeCup/obj/coffee_cup.mtl`,
+      source: `/CoffeeCup/obj/coffee_cup.obj`,
+      mtl: `/CoffeeCup/obj/coffee_cup.mtl`,
       type: "OBJ",
       scale: 0.015,
     },
@@ -65,8 +65,8 @@ async function seed() {
     product_type: "Entrees",
     assets: {
       name: "hand gun",
-      source: `${localHost}/GunObj/Handgun_obj.obj`,
-      mtl: `${localHost}/GunObj/Handgun_obj.mtl`,
+      source: `/GunObj/Handgun_obj.obj`,
+      mtl: `/GunObj/Handgun_obj.mtl`,
       type: "OBJ",
       scale: 0.15,
     },
