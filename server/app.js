@@ -17,7 +17,7 @@ const corsOptions =  {
 
 // body parsing middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 // app.use(cookieParser());
 
 // auth and api routes
