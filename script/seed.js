@@ -46,7 +46,7 @@ async function seed() {
     threeD_imgUrl: "", //img with mtl and obj
     price: 5.99,
     description: "Cappuccino",
-    product_type: "Drinks",
+    product_type: "Drink",
     assets: {
       name: "coffee cup",
       source: `/CoffeeCup/obj/coffee_cup.obj`,
@@ -62,7 +62,7 @@ async function seed() {
     threeD_imgUrl: "", //img with mtl and obj
     price: 599.99,
     description: "Gun",
-    product_type: "Entrees",
+    product_type: "Entree",
     assets: {
       name: "hand gun",
       source: `/GunObj/Handgun_obj.obj`,
