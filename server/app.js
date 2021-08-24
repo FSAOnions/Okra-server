@@ -31,7 +31,7 @@ app.use("/api", require("./api"));
 
 // static file-serving middleware
 
-// app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 // any remaining requests with an extension (.js, .css, etc.) send 404
 app.use((req, res, next) => {

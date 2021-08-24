@@ -42,7 +42,7 @@ async function seed() {
 
   await Product.create({
     product_name: "Coffee",
-    product_imgUrl: "public/CoffeeCup/obj/1st_rend.png", //img from Sung
+    product_imgUrl: "/CoffeeCup/obj/1st_rend.png", //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 5.99,
     description: "Cappuccino",
@@ -56,22 +56,7 @@ async function seed() {
     },
     restaurantId: 1,
   });
-  await Product.create({
-    product_name: "Makarov pistol",
-    product_imgUrl: "public/GunObj/textures/handgun_C.jpg", //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
-    price: 599.99,
-    description: "Gun",
-    product_type: "Entree",
-    assets: {
-      name: "hand gun",
-      source: `/GunObj/Handgun_obj.obj`,
-      mtl: `/GunObj/Handgun_obj.mtl`,
-      type: "OBJ",
-      scale: 0.15,
-    },
-    restaurantId: 1,
-  });
+  
 
   await User.create({
     firstName: "Andrew",
