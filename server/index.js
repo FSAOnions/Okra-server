@@ -10,7 +10,7 @@ const init = async () => {
     if (process.env.NODE_ENV !== "production") {
       require("dotenv").config();
     }
-    if (process.env.SEED === "true") {
+    if (process.env.SEED === "TRUE") {
       await seed();
     } else {
       await db.sync();
