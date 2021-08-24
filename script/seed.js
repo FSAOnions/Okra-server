@@ -7,9 +7,9 @@ const {
   CartItem,
   User,
   db,
-} = require("../server/db/models/index");
+} = require("../server/db/models");
 
-const fs = require("fs");
+
 async function seed() {
   await db.sync({ force: true }); // clears db and matches models to tables
   console.log("db synced!");
