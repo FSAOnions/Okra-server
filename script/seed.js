@@ -96,12 +96,12 @@ async function seed() {
     cartId: 1,
     productId: 1,
   });
-  await CartItem.create({
-    quantity: 2,
-    price: 9.98,
-    cartId: 2,
-    productId: 2,
-  });
+//   await CartItem.create({
+//     quantity: 2,
+//     price: 9.98,
+//     cartId: 2,
+//     productId: 2,
+//   });
   await CartItem.create({
     quantity: 1,
     price: 15.99,
