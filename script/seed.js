@@ -9,6 +9,11 @@ const {
   db,
 } = require("../server/db/models");
 
+const serverUrl = "https://okra-onions.herokuapp.com";
+
+const loadAsset = ( path ) => {
+  return `${serverUrl}${path}`
+}
 
 async function seed() {
   await db.sync({ force: true }); // clears db and matches models to tables
@@ -42,15 +47,15 @@ async function seed() {
 
   await Product.create({
     product_name: "Coffee",
-    product_imgUrl: "/CoffeeCup/obj/1st_rend.png", //img from Sung
+    product_imgUrl: loadAsset("/CoffeeCup/obj/1st_rend.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 5.99,
     description: "Cappuccino",
     product_type: "Drink",
     assets: {
       name: "coffee cup",
-      source: `/CoffeeCup/obj/coffee_cup.obj`,
-      mtl: `/CoffeeCup/obj/coffee_cup.mtl`,
+      source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
+      mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
       type: "OBJ",
       scale: 0.015,
     },
@@ -96,12 +101,6 @@ async function seed() {
     cartId: 1,
     productId: 1,
   });
-//   await CartItem.create({
-//     quantity: 2,
-//     price: 9.98,
-//     cartId: 2,
-//     productId: 2,
-//   });
   await CartItem.create({
     quantity: 1,
     price: 15.99,
