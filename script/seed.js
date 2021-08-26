@@ -57,17 +57,22 @@ async function seed() {
     restaurantId: 1,
   });
   
-
+  await User.create({
+    firstName: "Albina",
+    lastName: "U",
+    email: "A@okra.com",
+    password: "1234",
+  });
   await User.create({
     firstName: "Andrew",
-    lasttName: "Bloodworth",
+    lastName: "Bloodworth",
     email: "AndrewB@okra.com",
     password: "12345678",
   });
 
   await User.create({
     firstName: "Mohamed",
-    lasttName: "ADAM",
+    lastName: "ADAM",
     email: "MohamedA@okra.com",
     password: "12345678",
   });
