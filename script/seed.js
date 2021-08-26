@@ -20,25 +20,25 @@ async function seed() {
       "https://saferchemicals.org/wp-content/uploads/2021/01/McDonalds-sign-scaled.jpeg",
   });
 
-  await Product.create({
-    product_name: "burger",
-    product_imgUrl: "", //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
-    price: 15.99,
-    description:
-      "bison burger, fresh mozzarella, arugula, shaved parmesan, roasted tomato, pesto mayo",
-    product_type: "Entree",
-    restaurantId: 1,
-  });
-  await Product.create({
-    product_name: "fries",
-    product_imgUrl: "", //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
-    price: 4.99,
-    description: "potato, ketchup, salt",
-    product_type: "Appetizer",
-    restaurantId: 1,
-  });
+  // await Product.create({
+  //   product_name: "burger",
+  //   product_imgUrl: "", //img from Sung
+  //   threeD_imgUrl: "", //img with mtl and obj
+  //   price: 15.99,
+  //   description:
+  //     "bison burger, fresh mozzarella, arugula, shaved parmesan, roasted tomato, pesto mayo",
+  //   product_type: "Entree",
+  //   restaurantId: 1,
+  // });
+  // await Product.create({
+  //   product_name: "fries",
+  //   product_imgUrl: "", //img from Sung
+  //   threeD_imgUrl: "", //img with mtl and obj
+  //   price: 4.99,
+  //   description: "potato, ketchup, salt",
+  //   product_type: "Appetizer",
+  //   restaurantId: 1,
+  // });
 
   await Product.create({
     product_name: "Coffee",
