@@ -1,4 +1,6 @@
-export const requireToken = async (req, res, next) => {
+const { User } = require('../../db/models');
+
+const requireToken = async (req, res, next) => {
   try {
     req.user = await User.findByToken(req.cookies.token);
     next();
@@ -7,7 +9,7 @@ export const requireToken = async (req, res, next) => {
   }
 };
 
-export const requireAdmin = async (req, res, next) => {
+const requireAdmin = async (req, res, next) => {
   try {
     if (!req.user.isAdmin) {
       return res.status(403).send('Admin permissions required');
@@ -18,3 +20,5 @@ export const requireAdmin = async (req, res, next) => {
     next(e);
   }
 };
+
+module.exports = { requireToken, requireAdmin };
