@@ -61,6 +61,56 @@ async function seed() {
     },
     restaurantId: 1,
   });
+  await Product.create({
+    product_name: "Coffee",
+    product_imgUrl: loadAsset("/CoffeeCup/obj/Blue.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 5.99,
+    description: "Cappuccino",
+    product_type: "Drink",
+    assets: {
+      name: "coffee cup",
+      source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
+      mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
+      type: "OBJ",
+      scale: 0.015,
+    },
+    restaurantId: 1,
+  });
+
+  await Product.create({
+    product_name: "Coffee",
+    product_imgUrl: loadAsset("/CoffeeCup/obj/Red.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 5.99,
+    description: "Cappuccino",
+    product_type: "Drink",
+    assets: {
+      name: "coffee cup",
+      source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
+      mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
+      type: "OBJ",
+      scale: 0.015,
+    },
+    restaurantId: 1,
+  });
+
+  await Product.create({
+    product_name: "Coffee",
+    product_imgUrl: loadAsset("/CoffeeCup/obj/Green.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 5.99,
+    description: "Cappuccino",
+    product_type: "Drink",
+    assets: {
+      name: "coffee cup",
+      source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
+      mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
+      type: "OBJ",
+      scale: 0.015,
+    },
+    restaurantId: 1,
+  });
   
   await User.create({
     firstName: "Albina",
