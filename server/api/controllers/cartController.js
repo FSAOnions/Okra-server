@@ -51,4 +51,22 @@ module.exports = {
       next(e);
     }
   },
+  checkoutCart: async (req, res, next) => {
+    try {
+      const user = req.user;
+
+      const lastCart = user.carts.find((cart) => cart.status === 'Cart');
+      const userCart = await Cart.findByPk(lastCart.id, { include: Product });
+
+      await userCart.update({ status: 'Purchased' });
+      const newCart = await Cart.create();
+
+      await newCart.setUser(user);
+      await user.addCart(newCart);
+
+      res.send(204);
+    } catch (e) {
+      next(e);
+    }
+  },
 };
