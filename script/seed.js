@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const {
   Cart,
@@ -7,22 +7,22 @@ const {
   CartItem,
   User,
   db,
-} = require("../server/db/models");
+} = require('../server/db/models');
 
-const serverUrl = "https://okra-onions.herokuapp.com";
+const serverUrl = 'https://okra-onions.herokuapp.com';
 
-const loadAsset = ( path ) => {
-  return `${serverUrl}${path}`
-}
+const loadAsset = (path) => {
+  return `${serverUrl}${path}`;
+};
 
 async function seed() {
   await db.sync({ force: true }); // clears db and matches models to tables
-  console.log("db synced!");
+  console.log('db synced!');
 
   await Restaurant.create({
-    name: "McDonalds",
+    name: 'McDonalds',
     imgUrl:
-      "https://saferchemicals.org/wp-content/uploads/2021/01/McDonalds-sign-scaled.jpeg",
+      'https://saferchemicals.org/wp-content/uploads/2021/01/McDonalds-sign-scaled.jpeg',
   });
 
   // await Product.create({
@@ -46,100 +46,106 @@ async function seed() {
   // });
 
   await Product.create({
-    product_name: "Coffee",
-    product_imgUrl: loadAsset("/CoffeeCup/obj/1st_rend.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
+    product_name: 'Coffee',
+    product_imgUrl: loadAsset('/CoffeeCup/obj/1st_rend.png'), //img from Sung
+    threeD_imgUrl: '', //img with mtl and obj
     price: 5.99,
-    description: "Cappuccino",
-    product_type: "Drink",
+    description: 'Cappuccino',
+    product_type: 'Drink',
     assets: {
-      name: "coffee cup",
+      name: 'coffee cup',
       source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
       mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
-      type: "OBJ",
+      type: 'OBJ',
       scale: 0.015,
     },
     restaurantId: 1,
   });
   await Product.create({
-    product_name: "Coffee",
-    product_imgUrl: loadAsset("/CoffeeCup/obj/Blue.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
+    product_name: 'Coffee',
+    product_imgUrl: loadAsset('/CoffeeCup/obj/Blue.png'), //img from Sung
+    threeD_imgUrl: '', //img with mtl and obj
     price: 5.99,
-    description: "Cappuccino",
-    product_type: "Drink",
+    description: 'Cappuccino',
+    product_type: 'Drink',
     assets: {
-      name: "coffee cup",
+      name: 'coffee cup',
       source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
       mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
-      type: "OBJ",
+      type: 'OBJ',
       scale: 0.015,
     },
     restaurantId: 1,
   });
 
   await Product.create({
-    product_name: "Coffee",
-    product_imgUrl: loadAsset("/CoffeeCup/obj/Red.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
+    product_name: 'Coffee',
+    product_imgUrl: loadAsset('/CoffeeCup/obj/Red.png'), //img from Sung
+    threeD_imgUrl: '', //img with mtl and obj
     price: 5.99,
-    description: "Cappuccino",
-    product_type: "Drink",
+    description: 'Cappuccino',
+    product_type: 'Drink',
     assets: {
-      name: "coffee cup",
+      name: 'coffee cup',
       source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
       mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
-      type: "OBJ",
+      type: 'OBJ',
       scale: 0.015,
     },
     restaurantId: 1,
   });
 
   await Product.create({
-    product_name: "Coffee",
-    product_imgUrl: loadAsset("/CoffeeCup/obj/Green.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
+    product_name: 'Coffee',
+    product_imgUrl: loadAsset('/CoffeeCup/obj/Green.png'), //img from Sung
+    threeD_imgUrl: '', //img with mtl and obj
     price: 5.99,
-    description: "Cappuccino",
-    product_type: "Drink",
+    description: 'Cappuccino',
+    product_type: 'Drink',
     assets: {
-      name: "coffee cup",
+      name: 'coffee cup',
       source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
       mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
-      type: "OBJ",
+      type: 'OBJ',
       scale: 0.015,
     },
     restaurantId: 1,
   });
-  
-  await User.create({
-    firstName: "Albina",
-    lastName: "U",
-    email: "A@okra.com",
-    password: "1234",
-  });
-  await User.create({
-    firstName: "Andrew",
-    lastName: "Bloodworth",
-    email: "AndrewB@okra.com",
-    password: "12345678",
-  });
 
   await User.create({
-    firstName: "Mohamed",
-    lastName: "ADAM",
-    email: "MohamedA@okra.com",
-    password: "12345678",
+    firstName: 'albina',
+    lastName: 'u',
+    email: 'a@okra.com',
+    password: '1234',
+  });
+  await User.create({
+    firstName: 'andrew',
+    lastName: 'bloodworth',
+    email: 'andrewb@okra.com',
+    password: '1234',
+  });
+  await User.create({
+    firstName: 'mohamed',
+    lastName: 'adam',
+    email: 'mohameda@okra.com',
+    password: '1234',
+  });
+  await User.create({
+    firstName: 'sung',
+    lastName: 'y',
+    email: 'sung@okra.com',
+    password: '1234',
+    isAdmin: true,
   });
   await Cart.create({
-    status: "Purchased",
+    status: 'Purchased',
     total_price: 31.98,
     userId: 2,
     restaurantId: 1,
   });
 
   await Cart.create({
-    status: "Cart",
+    status: 'Cart',
     total_price: 25.97,
     userId: 1,
     restaurantId: 1,
@@ -160,16 +166,16 @@ async function seed() {
 }
 
 async function runSeed() {
-  console.log("seeding...");
+  console.log('seeding...');
   try {
     await seed();
   } catch (err) {
     console.error(err);
     process.exitCode = 1;
   } finally {
-    console.log("closing db connection");
+    console.log('closing db connection');
     await db.close();
-    console.log("db connection closed");
+    console.log('db connection closed');
   }
 }
 
