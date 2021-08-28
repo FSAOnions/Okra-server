@@ -33,7 +33,7 @@ const User = db.define('user', {
   },
 });
 
-User.authenticate = async function ({ email, password }) {
+User.authenticate = async function ({ ...info, email, password }) {
   const user = await this.findOne({ where: { email } });
   console.log('user', user);
   if (!user || !(await user.correctPassword(password))) {
