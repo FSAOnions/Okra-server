@@ -34,8 +34,9 @@ const User = db.define('user', {
 });
 
 User.authenticate = async function ({ email, password }) {
+  console.log("Auth", email, password);
   const user = await this.findOne({ where: { email } });
-  console.log('user', user);
+  console.log('user', user, await user.correctPassword(password));
   if (!user || !(await user.correctPassword(password))) {
     const error = Error('Incorrect email/password');
     error.status = 401;
@@ -44,7 +45,6 @@ User.authenticate = async function ({ email, password }) {
   return user.generateToken();
 };
 User.prototype.correctPassword = function (candidatePwd) {
-  console.log('BCr', bcrypt.compare(candidatePwd, this.password));
   //we need to compare the plain version to an encrypted version of the password
   return bcrypt.compare(candidatePwd, this.password);
 };
@@ -69,6 +69,8 @@ User.findByToken = async function (token) {
 };
 
 const hashPassword = async (user) => {
+  console.log(user)
+  console.log("hashPassword", user.changed('password'))
   //in case the password has been changed, we want to encrypt it with bcrypt
   if (user.changed('password')) {
     user.password = await bcrypt.hash(user.password, SALT_ROUNDS);
