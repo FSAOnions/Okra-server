@@ -43,10 +43,10 @@ User.authenticate = async function ({ email, password }) {
   }
   return user.generateToken();
 };
-User.prototype.correctPassword = function (candidatePwd) {
+User.prototype.correctPassword = async function (candidatePwd) {
   console.log('BCr', bcrypt.compare(candidatePwd, this.password));
   //we need to compare the plain version to an encrypted version of the password
-  return bcrypt.compare(candidatePwd, this.password);
+  return await bcrypt.compare(candidatePwd, this.password);
 };
 
 User.prototype.generateToken = function () {
