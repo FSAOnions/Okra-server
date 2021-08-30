@@ -10,7 +10,7 @@ const {
 
 const db = require("../server123/db/db");
 
-const serverUrl = "http://192.168.1.153:8080";
+const serverUrl = "https://okra-onions.herokuapp.com";
 
 const loadAsset = (path) => {
   return `${serverUrl}${path}`;
