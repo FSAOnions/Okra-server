@@ -36,7 +36,7 @@ module.exports = {
       next(error)
     }
   },
-  getAllRestaurants: async (res, req, next) => {
+  getAllRestaurants: async (req, res, next) => {
     try {
       const restaurants = await Restaurant.findAll()
       console.log('restaurants from server', restaurants)
