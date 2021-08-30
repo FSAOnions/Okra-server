@@ -107,19 +107,19 @@ const productSeed = [
 
 const restaurantSeed = [
   {
-    name: "McDonalds",
+    name: "Starbucks",
     imgUrl:
-      "https://saferchemicals.org/wp-content/uploads/2021/01/McDonalds-sign-scaled.jpeg",
+      "RestaurantLogos/starbucks.jpeg",
   },
   {
-    name: "Grays Papaya",
+    name: "Shake Shack",
     imgUrl:
-      "https://saferchemicals.org/wp-content/uploads/2021/01/McDonalds-sign-scaled.jpeg",
+      "RestaurantLogos/shakeshack-logo.png",
   },
   {
     name: "Pizza Hut",
     imgUrl:
-      "https://saferchemicals.org/wp-content/uploads/2021/01/McDonalds-sign-scaled.jpeg",
+      "RestaurantLogos/pizzahut.jpeg",
   },
 ];
 
