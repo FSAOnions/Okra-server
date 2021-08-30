@@ -1,20 +1,22 @@
 const path = require("path");
 const express = require("express");
-const cors = require('cors')
+const cors = require("cors");
 const app = express();
+const cookieParser = require("cookie-parser");
 
 module.exports = app;
 
 // logging middleware
 
-const corsOptions =  {
+const corsOptions = {
   origin: "https://okra-onions.herokuapp.com",
-  optionSuccessStatus: 200
-}
+  optionSuccessStatus: 200,
+};
 
 // body parsing middleware
 app.use(express.json());
 app.use(cors(corsOptions));
+app.use(cookieParser());
 
 // auth and api routes
 app.use("/auth", require("./auth"));
