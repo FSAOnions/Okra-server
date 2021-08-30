@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 router.use("/products", require("./routes/products"));
-router.use("/cart", require("./routes/cart"));
+router.use("/order", require("./routes/order"));
 router.use("/bill", require("./routes/bill"));
 
 router.use((req, res, next) => {
