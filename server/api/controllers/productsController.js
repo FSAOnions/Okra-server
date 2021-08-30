@@ -39,6 +39,7 @@ module.exports = {
   getAllRestaurants: async (res, req, next) => {
     try {
       const restaurants = await Restaurant.findAll()
+      console.log('restaurants from server', restaurants)
       res.send(restaurants)
     } catch (error) {
       next(error)
