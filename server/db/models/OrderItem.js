@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const CartItem = db.define("cart-item", {
+const OrderItem = db.define("order-item", {
   quantity: {
     type: Sequelize.INTEGER,
     defaultValue: 0,
@@ -11,4 +11,4 @@ const CartItem = db.define("cart-item", {
   },
 });
 
-module.exports = CartItem;
+module.exports = OrderItem;

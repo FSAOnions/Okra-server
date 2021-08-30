@@ -1,30 +1,35 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
-const Cart = require("./Cart");
-const CartItem = require("./CartItem");
+const Order = require("./Order");
+const OrderItem = require("./OrderItem");
 const User = require("./User");
 const Product = require("./Product");
 const Restaurant = require("./Restaurant");
+const Bill = require("./Bill");
 
-const cartThroughTable = { through: CartItem };
+const orderThroughTable = { through: OrderItem };
 
 Restaurant.hasMany(Product);
 Product.belongsTo(Restaurant);
 
-Cart.belongsToMany(Product, cartThroughTable);
-Product.belongsToMany(Cart, cartThroughTable);
+Order.belongsToMany(Product, orderThroughTable);
+Product.belongsToMany(Order, orderThroughTable);
 
-User.hasMany(Cart);
-Cart.belongsTo(User);
+Bill.hasMany(Order);
+Order.belongsTo(Bill);
 
-Restaurant.hasMany(Cart);
-Cart.belongsTo(Restaurant);
+User.belongsToMany(Bill, { through: "user-bill" });
+Bill.belongsTo(User);
+
+Restaurant.hasMany(Bill);
+Bill.belongsTo(Restaurant);
 
 module.exports = {
   db,
   Restaurant,
-  Cart,
-  CartItem,
+  Order,
+  OrderItem,
   User,
   Product,
+  Bill,
 };

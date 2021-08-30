@@ -1,11 +1,12 @@
-const Sequelize = require('sequelize');
-const db = require('../db');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+const Sequelize = require("sequelize");
+const db = require("../db");
+const Bill = require("./Bill");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 const SALT_ROUNDS = 5;
 
-const User = db.define('user', {
+const User = db.define("user", {
   firstName: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -34,11 +35,9 @@ const User = db.define('user', {
 });
 
 User.authenticate = async function ({ email, password }) {
-  console.log("Auth", email, password);
   const user = await this.findOne({ where: { email } });
-  console.log('user', user, await user.correctPassword(password));
   if (!user || !(await user.correctPassword(password))) {
-    const error = Error('Incorrect email/password');
+    const error = Error("Incorrect email/password");
     error.status = 401;
     throw error;
   }
@@ -56,23 +55,25 @@ User.prototype.generateToken = function () {
 User.findByToken = async function (token) {
   try {
     const { id } = await jwt.verify(token, process.env.JWT);
-    const user = User.findByPk(id);
+    const user = User.findByPk(id, {
+      include: { model: Bill },
+    });
     if (!user) {
-      throw 'nooo';
+      throw "nooo";
     }
     return user;
   } catch (ex) {
-    const error = Error('bad token');
+    const error = Error("bad token");
     error.status = 401;
     throw error;
   }
 };
 
 const hashPassword = async (user) => {
-  console.log(user)
-  console.log("hashPassword", user.changed('password'))
+  console.log(user);
+  console.log("hashPassword", user.changed("password"));
   //in case the password has been changed, we want to encrypt it with bcrypt
-  if (user.changed('password')) {
+  if (user.changed("password")) {
     user.password = await bcrypt.hash(user.password, SALT_ROUNDS);
   }
 };
