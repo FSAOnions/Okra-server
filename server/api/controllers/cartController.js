@@ -4,7 +4,7 @@ module.exports = {
   getUserCart: async (req, res, next) => {
     try {
       // get user cart will create an active cart if they don't have one.
-      if (req.user.id != req.params.userId) throw new Error('Not authorized!');
+
       const { restaurantId } = req.params;
       let user = req.user;
       let cart = user.carts.find((cart) => cart.status === 'Cart');
