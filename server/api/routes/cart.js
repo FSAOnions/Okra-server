@@ -9,7 +9,7 @@ const { requireToken } = require('../util/apiMiddleware');
 
 router.put('/checkout', requireToken, checkoutCart);
 router.get('/:userId', requireToken, getUserCart);
-router.post('/:itemId', requireToken, addItemToCart);
-router.delete('/itemId', requireToken, deleteItemFromCart);
+router.post('/:productId', requireToken, addItemToCart);
+router.delete('/:productId', requireToken, deleteItemFromCart);
 
 module.exports = router;
