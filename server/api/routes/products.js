@@ -8,8 +8,8 @@ const {
 const { requireToken, requireAdmin } = require('../util/apiMiddleware');
 
 router.get('/', requireToken, getAllProducts);
-router.get('/:id', requireToken, getSingleProduct);
-router.get('/allrestaurants', requireToken, getAllRestaurants)
+router.get('/restaurants', requireToken, getAllRestaurants)
 router.get('/restaurants/:id', requireToken, getRestaurantMenu)
+router.get('/:id', requireToken, getSingleProduct);
 
 module.exports = router;
