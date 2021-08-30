@@ -8,7 +8,7 @@ const {
 const { requireToken } = require('../util/apiMiddleware');
 
 router.put('/checkout', requireToken, checkoutCart);
-router.get('/:userId', requireToken, getUserCart);
+router.get('/:userId/:restaurantId', requireToken, getUserCart);
 router.post('/:productId', requireToken, addItemToCart);
 router.delete('/:productId', requireToken, deleteItemFromCart);
 
