@@ -1,11 +1,11 @@
-const Sequelize = require("sequelize");
-const db = require("../db");
+const Sequelize = require('sequelize');
+const db = require('../db');
 
-const Cart = db.define("cart", {
+const Cart = db.define('cart', {
   status: {
-    type: Sequelize.ENUM("Purchased", "Cart"),
+    type: Sequelize.ENUM('Purchased', 'Cart'),
     allowNull: false,
-    defaultValue: "Cart",
+    defaultValue: 'Cart',
   },
   total_price: {
     type: Sequelize.DECIMAL(10, 2),
@@ -15,7 +15,7 @@ const Cart = db.define("cart", {
   dollars: {
     type: Sequelize.VIRTUAL,
     get() {
-      const rawValue = this.getDataValue("totalprice");
+      const rawValue = this.getDataValue('total_price');
       const dollar = (rawValue / 100).toFixed(2);
       return `$${dollar}`;
     },
