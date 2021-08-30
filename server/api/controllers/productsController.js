@@ -1,7 +1,8 @@
-const { Product } = require('../../db/models');
+const { Product, Restaurant } = require('../../db/models');
+const { requireToken } = require('../util/apiMiddleware');
 
 module.exports = {
-  getAllProducts: async (req, res) => {
+  getAllProducts: async (req, res, next) => {
     try {
       const products = await Product.findAll();
       console.log({ products });
@@ -10,7 +11,7 @@ module.exports = {
       next(e);
     }
   },
-  getSingleProduct: async (req, res) => {
+  getSingleProduct: async (req, res, next) => {
     try {
       const id = req.params.id;
       const product = await Product.findByPk(id);
@@ -22,4 +23,25 @@ module.exports = {
       next(e);
     }
   },
+  getRestaurantMenu: async(req, res, next) => {
+    try {
+      const id = req.params.id
+      const restaurantMenu = await Product.findAll({
+        where: {
+          restaurantId: id
+        }
+      })
+      res.send(restaurantMenu)
+    } catch (error) {
+      next(error)
+    }
+  },
+  getAllRestaurants: async (res, req, next) => {
+    try {
+      const restaurants = await Restaurant.findAll()
+      res.send(restaurants)
+    } catch (error) {
+      next(error)
+    }
+  }
 };
