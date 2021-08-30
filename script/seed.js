@@ -20,9 +20,16 @@ async function seed() {
   console.log('db synced!');
 
   await Restaurant.create({
-    name: 'McDonalds',
+    name: 'ShakeShack',
     imgUrl:
-      'https://saferchemicals.org/wp-content/uploads/2021/01/McDonalds-sign-scaled.jpeg',
+      '/public/RestaurantLogos/shakeshack-logo.png',
+  });
+
+
+  await Restaurant.create({
+    name: 'Starbucks',
+    imgUrl:
+      '/public/RestaurantLogos/starbucks.jpeg',
   });
 
   // await Product.create({
@@ -92,7 +99,7 @@ async function seed() {
       type: 'OBJ',
       scale: 0.015,
     },
-    restaurantId: 1,
+    restaurantId: 2,
   });
 
   await Product.create({
@@ -109,7 +116,7 @@ async function seed() {
       type: 'OBJ',
       scale: 0.015,
     },
-    restaurantId: 1,
+    restaurantId: 2,
   });
 
   await User.create({
