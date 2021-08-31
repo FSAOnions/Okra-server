@@ -6,11 +6,14 @@ module.exports = {
       const { restaurantId } = req.params;
       let user = req.user;
       console.log("USER ", user);
+      let bill = user.bills.find((bill) => bill.status == "Pending");
 
-      let bill = await Bill.create({ status: "Pending", total_price: 0 });
-      await bill.setRestaurant(restaurantId);
-      await bill.setUser(user);
-      await user.addBill(bill);
+      if (!bill) {
+        bill = await Bill.create({ status: "Pending", total_price: 0 });
+        await bill.setRestaurant(restaurantId);
+        await bill.setUser(user);
+        await user.addBill(bill);
+      }
 
       res.json(bill);
     } catch (e) {
