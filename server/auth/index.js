@@ -39,7 +39,7 @@ router.put("/currentRestaurant/:id", requireToken, async (req, res, next) => {
   }
 });
 
-router.put("/:id", async (req, res, next) => {
+router.put("/update", requireToken, async (req, res, next) => {
   try {
     const user = await User.findByPk(req.params.id);
     res.send(await user.update(req.body));
