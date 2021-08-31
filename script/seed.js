@@ -1,10 +1,6 @@
 "use strict";
 
-const {
-  Restaurant,
-  User,
-  Product,
-} = require("../server/db/models");
+const { Restaurant, User, Product } = require("../server/db/models");
 
 const db = require("../server/db/db");
 
@@ -45,62 +41,103 @@ const userSeed = [
 const productSeed = [
   {
     product_name: "Coffee",
-    product_imgUrl: loadAsset("/CoffeeCup/obj/1st_rend.png"), //img from Sung
+    product_imgUrl: loadAsset("/Coffee/image.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 5.99,
-    description: "Cappuccino",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     product_type: "Drink",
     assets: {
       name: "coffee cup",
-      source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
-      mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
+      source: loadAsset(`/Coffee/coffee_cup_obj.obj`),
+      mtl: loadAsset(`/Coffee/coffee_cup_obj.mtl`),
       type: "OBJ",
-      scale: 0.015,
+      scale: 0.2,
+      rotate: 0,
     },
   },
   {
-    product_name: "Coffee",
-    product_imgUrl: loadAsset("/CoffeeCup/obj/Blue.png"), //img from Sung
+    product_name: "Pizza",
+    product_imgUrl: loadAsset("/Pizza/pizzaslice.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 5.99,
-    description: "Cappuccino",
-    product_type: "Drink",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    product_type: "Entree",
     assets: {
-      name: "coffee cup",
-      source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
-      mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
+      name: "pizza",
+      source: loadAsset(`/Pizza/Pizza.obj`),
+      mtl: loadAsset(`/Pizza/Pizza.mtl`),
       type: "OBJ",
-      scale: 0.015,
+      scale: 0.01,
+      rotate: -90,
     },
   },
   {
-    product_name: "Coffee",
-    product_imgUrl: loadAsset("/CoffeeCup/obj/Red.png"), //img from Sung
+    product_name: "Reuben",
+    product_imgUrl: loadAsset("/Reuben/rubensandwich.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 5.99,
-    description: "Cappuccino",
-    product_type: "Drink",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    product_type: "Entree",
     assets: {
-      name: "coffee cup",
-      source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
-      mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
+      name: "reuben",
+      source: loadAsset(`/Reuben/13931_Reuben_Sandwich_on_Plate_v2_L1.obj`),
+      mtl: loadAsset(`/Reuben/13931_Reuben_Sandwich_on_Plate_v2_L1.mtl`),
       type: "OBJ",
-      scale: 0.015,
+      scale: 0.01,
+      rotate: -90,
     },
   },
   {
-    product_name: "Coffee",
-    product_imgUrl: loadAsset("/CoffeeCup/obj/Green.png"), //img from Sung
+    product_name: "Pie",
+    product_imgUrl: loadAsset("/Dessert/pie.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 5.99,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    product_type: "Dessert",
+    assets: {
+      name: "pie",
+      source: loadAsset(`/Dessert/11547_Dessert_pie_v3_l2.obj`),
+      mtl: loadAsset(`/Dessert/11547_Dessert_pie_v3_l2.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: -90,
+    },
+  },
+  {
+    product_name: "Pretzel",
+    product_imgUrl: loadAsset("/Pretzel/pretzel.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 5.99,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    product_type: "Appetizer",
+    assets: {
+      name: "pretzel",
+      source: loadAsset(`/Pretzel/13933_Big_Pretzel_on_Napkin_v3_l2.obj`),
+      mtl: loadAsset(`/Pretzel/13933_Big_Pretzel_on_Napkin_v3_l2.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: -90,
+    },
+  },
+  {
+    product_name: "Cake",
+    product_imgUrl: loadAsset("/Cake/cake.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 5.99,
     description: "Cappuccino",
     product_type: "Drink",
     assets: {
       name: "coffee cup",
-      source: loadAsset(`/CoffeeCup/obj/coffee_cup.obj`),
-      mtl: loadAsset(`/CoffeeCup/obj/coffee_cup.mtl`),
+      source: loadAsset(`/Cake/10868_birthday-cake_v3.obj`),
+      mtl: loadAsset(`/Cake/10868_birthday-cake_v3.mtl`),
       type: "OBJ",
-      scale: 0.015,
+      scale: 0.01,
+      rotate: -90,
     },
   },
 ];
@@ -108,18 +145,15 @@ const productSeed = [
 const restaurantSeed = [
   {
     name: "Starbucks",
-    imgUrl:
-      "RestaurantLogos/starbucks.jpeg",
+    imgUrl: "RestaurantLogos/starbucks.jpeg",
   },
   {
     name: "Shake Shack",
-    imgUrl:
-      "RestaurantLogos/shakeshack-logo.png",
+    imgUrl: "RestaurantLogos/shakeshack-logo.png",
   },
   {
     name: "Pizza Hut",
-    imgUrl:
-      "RestaurantLogos/pizzahut.jpeg",
+    imgUrl: "RestaurantLogos/pizzahut.jpeg",
   },
 ];
 
