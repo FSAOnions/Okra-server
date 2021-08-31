@@ -29,7 +29,7 @@ const Product = db.define("product", {
     type: Sequelize.STRING,
   },
   product_type: {
-    type: Sequelize.ENUM("Appetizer", "Entree", "Drink"),
+    type: Sequelize.ENUM("Appetizer", "Entree", "Drink", "Dessert"),
     allowNull: false,
   },
   assets: {
