@@ -1,4 +1,4 @@
-const { Product, Order } = require("../../db/models");
+const { Product, Order, Bill } = require("../../db/models");
 
 module.exports = {
   getOrders: async (req, res, next) => {
@@ -11,6 +11,22 @@ module.exports = {
         await Order.findAll({
           where: { billId: bill.id },
           include: { model: Product },
+        })
+      );
+    } catch (e) {
+      next(e);
+    }
+  },
+  getOrderHistory: async (req, res, next) => {
+    try {
+      res.json(
+        await Order.findAll({
+          include: {
+            model: Bill.findAll({
+              where: { userId: req.user.id, status: "Paid" },
+            }),
+            model: OrderItem.findAll({ include: { model: Product } }),
+          },
         })
       );
     } catch (e) {
