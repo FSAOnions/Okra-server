@@ -1,4 +1,4 @@
-const { Product, Order, Bill } = require("../../db/models");
+const { Product, Order, Bill, OrderItem } = require("../../db/models");
 
 module.exports = {
   getOrders: async (req, res, next) => {
