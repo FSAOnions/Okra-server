@@ -48,7 +48,8 @@ module.exports = {
         },
       });
       const user = req.user;
-      user.update({ currentRestaurantId: restaurantId });
+      const updatedUser = await User.findByPk(user.id);
+      await updatedUser.update({ currentRestaurantId: restaurantId });
       console.log("restaurants from server", restaurants);
       res.send(restaurants);
     } catch (error) {
