@@ -140,6 +140,22 @@ const productSeed = [
       rotate: -90,
     },
   },
+    {
+      product_name: "Wine",
+      product_imgUrl: loadAsset("/Wine/wine.png"), //img from Sung
+      threeD_imgUrl: "", //img with mtl and obj
+      price: 5.99,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      product_type: "Drink",
+      assets: {
+        name: "red wine",
+        source: loadAsset(`/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.obj`),
+        mtl: loadAsset(`/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.mtl`),
+        type: "OBJ",
+        scale: 0.01,
+        rotate: -90,
+      },
+  },
 ];
 
 const restaurantSeed = [
