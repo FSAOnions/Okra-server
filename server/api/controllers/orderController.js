@@ -25,7 +25,7 @@ module.exports = {
             model: Bill.findAll({
               where: { userId: req.user.id, status: "Paid" },
             }),
-            model: OrderItem.findAll({ include: { model: Product } }),
+            model: Product,
           },
         })
       );
