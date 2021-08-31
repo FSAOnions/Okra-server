@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../db/models");
+const { requireToken } = require("../api/util/apiMiddleware");
 
 router.post("/login", async (req, res, next) => {
   try {
@@ -26,7 +27,7 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-router.put("/currentRestaurant/:id", async (req, res, next) => {
+router.put("/currentRestaurant/:id", requireToken, async (req, res, next) => {
   try {
     const user = req.user;
     const updateUser = await User.findByPk(user.id);
