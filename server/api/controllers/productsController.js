@@ -38,7 +38,11 @@ module.exports = {
   },
   getAllRestaurants: async (req, res, next) => {
     try {
+      const { restaurantId } = req.query;
+
+      let condition = restaurantId ? { restaurantId } : null;
       const restaurants = await Restaurant.findAll({
+        where: condition,
         include: {
           model: Product,
         },
