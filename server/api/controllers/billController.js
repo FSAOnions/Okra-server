@@ -38,7 +38,7 @@ module.exports = {
         });
       }
 
-      bill.addOrder(order);
+      await bill.addOrder(order);
 
       res.send(201);
     } catch (e) {
@@ -70,7 +70,7 @@ module.exports = {
       );
 
       await userBill.update({ status: "Paid", total_price });
-      user.update({ currentRestaurantId: "" });
+      await user.update({ currentRestaurantId: "" });
       res.send(204);
     } catch (e) {
       next(e);
