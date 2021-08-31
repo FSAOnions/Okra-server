@@ -33,7 +33,7 @@ const User = db.define("user", {
     defaultValue: false,
   },
   currentRestaurantId: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
   },
 });
 
