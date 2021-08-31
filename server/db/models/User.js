@@ -32,7 +32,7 @@ const User = db.define("user", {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
   },
-  currentRestaurant: {
+  currentRestaurantId: {
     type: Sequelize.STRING,
   },
 });

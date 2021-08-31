@@ -1,4 +1,4 @@
-const { Product, Restaurant } = require("../../db/models");
+const { Product, Restaurant, User } = require("../../db/models");
 const { requireToken } = require("../util/apiMiddleware");
 
 module.exports = {
@@ -47,6 +47,8 @@ module.exports = {
           model: Product,
         },
       });
+      const user = req.user;
+      user.update({ currentRestaurantId: restaurantId });
       console.log("restaurants from server", restaurants);
       res.send(restaurants);
     } catch (error) {
