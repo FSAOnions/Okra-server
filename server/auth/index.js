@@ -32,7 +32,7 @@ router.put("/currentRestaurant/:id", async (req, res, next) => {
     const updateUser = await User.findByPk(user.id);
 
     await updateUser.update({ currentRestaurantId: req.params.id });
-    res.send(201);
+    res.json(updateUser);
   } catch (e) {
     next(e);
   }
