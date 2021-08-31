@@ -73,7 +73,7 @@ module.exports = {
       );
 
       await userBill.update({ status: "Paid", total_price });
-      await user.update({ currentRestaurantId: "" });
+      await user.update({ currentRestaurantId: null });
       res.send(204);
     } catch (e) {
       next(e);
