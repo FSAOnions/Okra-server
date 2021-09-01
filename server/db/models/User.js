@@ -34,6 +34,7 @@ const User = db.define("user", {
   },
   currentRestaurantId: {
     type: Sequelize.INTEGER,
+    omitNull: true,
   },
 });
 
