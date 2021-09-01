@@ -26,7 +26,7 @@ const Product = db.define("product", {
     },
   },
   description: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
   },
   product_type: {
     type: Sequelize.ENUM("Appetizer", "Entree", "Drink", "Dessert"),

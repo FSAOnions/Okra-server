@@ -32,6 +32,9 @@ const User = db.define("user", {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
   },
+  currentRestaurantId: {
+    type: Sequelize.INTEGER,
+  },
 });
 
 User.authenticate = async function ({ email, password }) {

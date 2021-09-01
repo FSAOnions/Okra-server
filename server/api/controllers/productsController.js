@@ -1,4 +1,4 @@
-const { Product, Restaurant } = require("../../db/models");
+const { Product, Restaurant, User } = require("../../db/models");
 const { requireToken } = require("../util/apiMiddleware");
 
 module.exports = {
@@ -38,11 +38,18 @@ module.exports = {
   },
   getAllRestaurants: async (req, res, next) => {
     try {
+      const { restaurantId } = req.query;
+
+      let condition = restaurantId ? { restaurantId } : null;
       const restaurants = await Restaurant.findAll({
+        where: condition,
         include: {
           model: Product,
         },
       });
+      const user = req.user;
+      const updatedUser = await User.findByPk(user.id);
+      await updatedUser.update({ currentRestaurantId: restaurantId });
       console.log("restaurants from server", restaurants);
       res.send(restaurants);
     } catch (error) {
