@@ -66,8 +66,7 @@ module.exports = {
 
       userBill.orders.map((order) =>
         order.products.map((product) => {
-          const { quantity, price } = product["order-item"];
-
+          const { quantity, price } = product.orderItem;
           return (total_price += quantity * price);
         })
       );
