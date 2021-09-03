@@ -59,9 +59,9 @@ router.get("/me", async (req, res, next) => {
   }
 });
 
-router.post("/leave", async (req, res, next) => {
+router.post("/leave", requireToken, async (req, res, next) => {
   try {
-    const user = await User.findByToken(req.cookies.token);
+    const user = req.user;
     await Bill.delete({ where: { userId: user.id, status: "Pending" } });
     // await Order.delete({ where: { billId: bill.id } });
     const userUpdated = await user.update({ currentRestaurantId: null })
