@@ -1,0 +1,18 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 24.11.2014 13:19:31
+
+newmtl AM150_005
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5000 0.5000 0.5000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Am150_005_color.jpg
+	map_Kd Am150_005_color.jpg
+	map_bump -bm 0.3000 Am150_005_nrm.jpg
+	bump -bm 0.3000 Am150_005_nrm.jpg
