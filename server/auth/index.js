@@ -59,8 +59,9 @@ router.get("/me", async (req, res, next) => {
   }
 });
 
-router.post("/leave", requireToken, async (req, res, next) => {
+router.put("/leave", requireToken, async (req, res, next) => {
   try {
+    let user = req.user;
     await user.update({ currentRestaurantId: null });
     res.send(204);
   } catch (e) {
