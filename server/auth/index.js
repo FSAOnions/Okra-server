@@ -31,8 +31,11 @@ router.put("/currentRestaurant/:id", requireToken, async (req, res, next) => {
   try {
     const user = req.user;
     const updateUser = await User.findByPk(user.id);
+    console.log(req.params.id, typeof req.params.id);
 
-    await updateUser.update({ currentRestaurantId: Number(req.params.id) });
+    await updateUser.update({
+      currentRestaurantId: req.params.id ? Number(req.params.id) : null,
+    });
     res.json(updateUser);
   } catch (e) {
     next(e);
@@ -41,7 +44,7 @@ router.put("/currentRestaurant/:id", requireToken, async (req, res, next) => {
 
 router.put("/update", requireToken, async (req, res, next) => {
   try {
-    const user = await User.findByPk(req.params.id);
+    const user = await User.findByPk(req.user.id);
     res.send(await user.update(req.body));
   } catch (e) {
     next(e);
@@ -51,6 +54,18 @@ router.put("/update", requireToken, async (req, res, next) => {
 router.get("/me", async (req, res, next) => {
   try {
     res.send(await User.findByToken(req.cookies.token));
+  } catch (e) {
+    next(e);
+  }
+});
+
+router.post("/leave", requireToken, async (req, res, next) => {
+  try {
+    const user = req.user;
+    await Bill.delete({ where: { userId: user.id, status: "Pending" } });
+    // await Order.delete({ where: { billId: bill.id } });
+    const userUpdated = await user.update({ currentRestaurantId: null })
+    res.send(userUpdated);
   } catch (e) {
     next(e);
   }
