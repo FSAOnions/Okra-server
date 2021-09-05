@@ -169,7 +169,7 @@ const productSeed = [
     product_imgUrl: loadAsset("/Drink/Soda/cokecan.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 199,
-    description: "Cappuccino",
+    description: "Fizzy, cold, delicious",
     product_type: "Drink",
     assets: {
       name: "cocacola",
@@ -195,7 +195,87 @@ const productSeed = [
       scale: 0.01,
       rotate: -90,
     },
-  }
+  },
+  {
+    product_name: "Bread",
+    product_imgUrl: loadAsset("/HighPolyFood/Bread/005.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 1999,
+    description: "Yummy mmm good",
+    product_type: "Appetizer",
+    assets: {
+      name: "bread",
+      source: loadAsset(`/HighPolyFood/Bread/005.obj`),
+      mtl: loadAsset(`/HighPolyFood/Bread/005.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: 0,
+    },
+  },
+  {
+    product_name: "Burrito",
+    product_imgUrl: loadAsset("/HighPolyFood/Burrito/042.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 1999,
+    description: "Yummy mmm good",
+    product_type: "Entree",
+    assets: {
+      name: "burrito",
+      source: loadAsset(`/HighPolyFood/Burrito/042.obj`),
+      mtl: loadAsset(`/HighPolyFood/Burrito/042.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: 0,
+    },
+  },
+  {
+    product_name: "Pizza",
+    product_imgUrl: loadAsset("/HighPolyFood/Pizza/035.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 1999,
+    description: "Yummy mmm good",
+    product_type: "Entree",
+    assets: {
+      name: "pizza",
+      source: loadAsset(`/HighPolyFood/Pizza/035.obj`),
+      mtl: loadAsset(`/HighPolyFood/Pizza/035.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: 0,
+    },
+  },
+  {
+    product_name: "Ribs",
+    product_imgUrl: loadAsset("/HighPolyFood/Ribs/049.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 1999,
+    description: "Yummy mmm good",
+    product_type: "Entree",
+    assets: {
+      name: "ribs",
+      source: loadAsset(`/HighPolyFood/Ribs/049.obj`),
+      mtl: loadAsset(`/HighPolyFood/Ribs/049.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: 0,
+    },
+  },
+  {
+    product_name: "Steak",
+    product_imgUrl: loadAsset("/HighPolyFood/Steak/050.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 1999,
+    description: "Yummy mmm good",
+    product_type: "Entree",
+    assets: {
+      name: "steak",
+      source: loadAsset(`/HighPolyFood/Steak/050.obj`),
+      mtl: loadAsset(`/HighPolyFood/Steak/050.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: 0,
+    },
+  },
 ];
 
 const restaurantSeed = [
@@ -210,6 +290,10 @@ const restaurantSeed = [
   {
     name: "Pizza Hut",
     imgUrl: "RestaurantLogos/pizzahut.jpeg",
+  },
+  {
+    name: "Okra",
+    imgUrl: "RestaurantLogos/okra.png",
   },
 ];
 
@@ -243,6 +327,7 @@ async function seed() {
     } else {
       await allProducts[i].setRestaurant(2);
     }
+    await allProducts[i].setRestaurant(4);
   }
 
   console.log(`seeded ${users.length} users`);
