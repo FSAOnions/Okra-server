@@ -282,18 +282,22 @@ const restaurantSeed = [
   {
     name: "Starbucks",
     imgUrl: "RestaurantLogos/starbucks.jpeg",
+    tables: [1, 2, 3, 4, 5, 6, 7]
   },
   {
     name: "Shake Shack",
     imgUrl: "RestaurantLogos/shakeshack-logo.png",
+    tables: [1, 2, 3, 4, 5, 6, 7]
   },
   {
     name: "Pizza Hut",
     imgUrl: "RestaurantLogos/pizzahut.jpeg",
+    tables: [1, 2, 3, 4, 5, 6, 7]
   },
   {
     name: "Okra",
     imgUrl: "RestaurantLogos/okra.png",
+    tables: [1, 2, 3, 4, 5, 6, 7]
   },
 ];
 

@@ -13,6 +13,10 @@ const Restaurant = db.define("restaurant", {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  tables: {
+    type: Sequelize.ARRAY(Sequelize.INTEGER),
+    allowNull: false,
+  }
 });
 
 module.exports = Restaurant;
