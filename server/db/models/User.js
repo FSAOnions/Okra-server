@@ -36,6 +36,10 @@ const User = db.define("user", {
     type: Sequelize.INTEGER,
     omitNull: true,
   },
+  tableNumber: {
+    type: Sequelize.INTEGER,
+    omitNull: true,
+  }
 });
 
 User.authenticate = async function ({ email, password }) {
