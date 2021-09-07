@@ -109,22 +109,19 @@ const productSeed = [
       rotate: -90,
     },
   },
+ 
   {
-    product_name: "Pretzel",
-    product_imgUrl: loadAsset("/Appetizer/Pretzel/pretzel.png"), //img from Sung
+    product_name: "Cabernet Sauvignon",
+    product_imgUrl: loadAsset("/Drink/Wine/wine.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
-    price: 499,
+    price: 1099,
     description:
-      "Mall pretzels that you can now enjoy in the comfort of your home for a fraction of the price with countless dipping sauce option! They are the perfect party food or snack to impress guests with and they really are easier to make than you’d think.",
-    product_type: "Appetizer",
+      "Woodbridge by Robert Mondavi Cabernet Sauvignon Red Wine is a medium-bodied California wine that opens with enticing aromas of cherries, berries, rich cedar, brown sugar, and toast.",
+    product_type: "Drink",
     assets: {
-      name: "pretzel",
-      source: loadAsset(
-        `/Appetizer/Pretzel/13933_Big_Pretzel_on_Napkin_v3_l2.obj`
-      ),
-      mtl: loadAsset(
-        `/Appetizer/Pretzel/13933_Big_Pretzel_on_Napkin_v3_l2.mtl`
-      ),
+      name: "red wine",
+      source: loadAsset(`/Drink/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.obj`),
+      mtl: loadAsset(`/Drink/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.mtl`),
       type: "OBJ",
       scale: 0.01,
       rotate: -90,
@@ -142,23 +139,6 @@ const productSeed = [
       name: "birthdaycake",
       source: loadAsset(`/Dessert/BirthdayCake/10868_birthday-cake_v3.obj`),
       mtl: loadAsset(`/Dessert/BirthdayCake/10868_birthday-cake_v3.mtl`),
-      type: "OBJ",
-      scale: 0.01,
-      rotate: -90,
-    },
-  },
-  {
-    product_name: "Cabernet Sauvignon",
-    product_imgUrl: loadAsset("/Drink/Wine/wine.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
-    price: 1099,
-    description:
-      "Woodbridge by Robert Mondavi Cabernet Sauvignon Red Wine is a medium-bodied California wine that opens with enticing aromas of cherries, berries, rich cedar, brown sugar, and toast.",
-    product_type: "Drink",
-    assets: {
-      name: "red wine",
-      source: loadAsset(`/Drink/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.obj`),
-      mtl: loadAsset(`/Drink/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.mtl`),
       type: "OBJ",
       scale: 0.01,
       rotate: -90,
@@ -185,7 +165,7 @@ const productSeed = [
     product_imgUrl: loadAsset("/Dessert/Cupcake/cupcake.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 199,
-    description: "Yummy mmm good",
+    description: "Colorful, moist, delicious cupcakes, with extra frosting. Yummy mmm good",
     product_type: "Dessert",
     assets: {
       name: "cupcake",
@@ -201,7 +181,7 @@ const productSeed = [
     product_imgUrl: loadAsset("/HighPolyFood/Bread/005.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 1999,
-    description: "Yummy mmm good",
+    description: "Locally Made White & Pumpernickel Baguettes",
     product_type: "Appetizer",
     assets: {
       name: "bread",
@@ -217,7 +197,7 @@ const productSeed = [
     product_imgUrl: loadAsset("/HighPolyFood/Burrito/042.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 1999,
-    description: "Yummy mmm good",
+    description: "A burrito suizo means a burrito with melted cheese or a cheese sauce on top. “Suizo” means Swiss in Spanish (as in Swiss cheese), but the term is used to refer to any type of cheese.",
     product_type: "Entree",
     assets: {
       name: "burrito",
@@ -228,12 +208,33 @@ const productSeed = [
       rotate: 0,
     },
   },
+   {
+    product_name: "Pretzel",
+    product_imgUrl: loadAsset("/Appetizer/Pretzel/pretzel.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 499,
+    description:
+      "Mall pretzels that you can now enjoy in the comfort of your home for a fraction of the price with countless dipping sauce option! They are the perfect party food or snack to impress guests with and they really are easier to make than you’d think.",
+    product_type: "Appetizer",
+    assets: {
+      name: "pretzel",
+      source: loadAsset(
+        `/Appetizer/Pretzel/13933_Big_Pretzel_on_Napkin_v3_l2.obj`
+      ),
+      mtl: loadAsset(
+        `/Appetizer/Pretzel/13933_Big_Pretzel_on_Napkin_v3_l2.mtl`
+      ),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: -90,
+    },
+  },
   {
     product_name: "Pizza",
     product_imgUrl: loadAsset("/HighPolyFood/Pizza/035.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 1999,
-    description: "Yummy mmm good",
+    description: "San Marzano tomato sauce, fresh mozzarella fior di latte, fresh organic basil",
     product_type: "Entree",
     assets: {
       name: "pizza",
@@ -265,7 +266,7 @@ const productSeed = [
     product_imgUrl: loadAsset("/HighPolyFood/Steak/050.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 1999,
-    description: "Yummy mmm good",
+    description: "New York Steak / Bell Peppers / Spice Blend. Yummy mmm good",
     product_type: "Entree",
     assets: {
       name: "steak",
@@ -319,20 +320,22 @@ async function seed() {
     returning: true,
   });
 
-  const midwayPoint = Math.floor(allProducts.length / 2);
+//   const midwayPoint = Math.floor(allProducts.length / 2);
 
-  for (let i = 0; i < allProducts.length; i++) {
-    if (i < midwayPoint) {
-      await allProducts[i].setRestaurant(1);
-    } else {
-      await allProducts[i].setRestaurant(2);
-    }
+  for (let i = 0; i < allProducts.length-2; i=i+2) {
+//     if (i < midwayPoint) {
+//       await allProducts[i].setRestaurant(1);
+//     } else {
+//       await allProducts[i].setRestaurant(2);
+//     }
+//     await allProducts[i].setRestaurant(4);
+    await allProducts[i].setRestaurant(1);
+    await allProducts[i+1].setRestaurant(2);
+    await allProducts[i+2].setRestaurant(3);
     await allProducts[i].setRestaurant(4);
+    await allProducts[i+1].setRestaurant(4);
   }
 
-  console.log(`seeded ${users.length} users`);
-  console.log(`seeded successfully`);
-}
 
 /*
  We've separated the `seed` function from the `runSeed` function.
