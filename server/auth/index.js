@@ -35,6 +35,7 @@ router.put("/currentRestaurant/:id", requireToken, async (req, res, next) => {
 
     await updateUser.update({
       currentRestaurantId: req.params.id ? Number(req.params.id) : null,
+      currentTableId: req.query.tableId ? Number(req.query.tableId) : null,
     });
     res.json(updateUser);
   } catch (e) {
