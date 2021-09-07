@@ -20,13 +20,13 @@ const userSeed = [
   {
     firstName: "andrew",
     lastName: "bloodworth",
-    email: "andrewb@okra.com",
+    email: "ab@okra.com",
     password: "1234",
   },
   {
     firstName: "mohamed",
     lastName: "adam",
-    email: "mohameda@okra.com",
+    email: "mo@okra.com",
     password: "1234",
   },
   {
@@ -38,7 +38,7 @@ const userSeed = [
   },
 ];
 
-const productSeed = [
+const productSeedStrabucks = [
   {
     product_name: "Caffè Americano",
     product_imgUrl: loadAsset("/Drink/Coffee/image.png"), //img from Sung
@@ -54,42 +54,6 @@ const productSeed = [
       type: "OBJ",
       scale: 0.2,
       rotate: 0,
-    },
-  },
-  {
-    product_name: "Pizza",
-    product_imgUrl: loadAsset("/Entree/Pizza/pizzaslice.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
-    price: 499,
-    description:
-      "Thin-crust oven baked pizza topped with spicy pepperon, mozzarella, and homemade tomato sauce.",
-    product_type: "Entree",
-    assets: {
-      name: "pizza",
-      source: loadAsset(`/Entree/Pizza/Pizza.obj`),
-      mtl: loadAsset(`/Entree/Pizza/Pizza.mtl`),
-      type: "OBJ",
-      scale: 0.01,
-      rotate: -90,
-    },
-  },
-  {
-    product_name: "Reuben",
-    product_imgUrl: loadAsset("/Entree/Reuben/rubensandwich.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
-    price: 699,
-    description:
-      "With layers of mouthwatering meat, yummy fillings (of your choice), and crunchy vegetables, Arby’s reuben sandwich is truly an iconic dish! Who can say no to a sandwich stuffed with flavorful sauces, melted cheese, and luscious meat fillings? ",
-    product_type: "Entree",
-    assets: {
-      name: "reuben",
-      source: loadAsset(
-        `/Entree/Reuben/13931_Reuben_Sandwich_on_Plate_v2_L1.obj`
-      ),
-      mtl: loadAsset(`/Entree/Reuben/13931_Reuben_Sandwich_on_Plate_v2_L1.mtl`),
-      type: "OBJ",
-      scale: 0.01,
-      rotate: -90,
     },
   },
   {
@@ -109,68 +73,18 @@ const productSeed = [
       rotate: -90,
     },
   },
- 
   {
-    product_name: "Cabernet Sauvignon",
-    product_imgUrl: loadAsset("/Drink/Wine/wine.png"), //img from Sung
+    product_name: "Pizza",
+    product_imgUrl: loadAsset("/Entree/Pizza/pizzaslice.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
-    price: 1099,
+    price: 499,
     description:
-      "Woodbridge by Robert Mondavi Cabernet Sauvignon Red Wine is a medium-bodied California wine that opens with enticing aromas of cherries, berries, rich cedar, brown sugar, and toast.",
-    product_type: "Drink",
+      "Thin-crust oven baked pizza topped with spicy pepperon, mozzarella, and homemade tomato sauce.",
+    product_type: "Entree",
     assets: {
-      name: "red wine",
-      source: loadAsset(`/Drink/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.obj`),
-      mtl: loadAsset(`/Drink/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.mtl`),
-      type: "OBJ",
-      scale: 0.01,
-      rotate: -90,
-    },
-  },
-  {
-    product_name: "Birthday Cake",
-    product_imgUrl: loadAsset("/Dessert/BirthdayCake/cake.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
-    price: 1299,
-    description:
-      "This quadruple-layer cake isn't nearly as fussy to make as you might think. It starts out as a standard two-layer cake, then each layer is cut in half and stacked, with an easy filling in between the layers. The result is a moist cake that keeps well without refrigeration; looks spectacular when cut, and tastes even better than it looks!",
-    product_type: "Dessert",
-    assets: {
-      name: "birthdaycake",
-      source: loadAsset(`/Dessert/BirthdayCake/10868_birthday-cake_v3.obj`),
-      mtl: loadAsset(`/Dessert/BirthdayCake/10868_birthday-cake_v3.mtl`),
-      type: "OBJ",
-      scale: 0.01,
-      rotate: -90,
-    },
-  },
-  {
-    product_name: "Coca Cola",
-    product_imgUrl: loadAsset("/Drink/Soda/cokecan.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
-    price: 199,
-    description: "Fizzy, cold, delicious",
-    product_type: "Drink",
-    assets: {
-      name: "cocacola",
-      source: loadAsset(`/Drink/Soda/14025_Soda_Can_v3_l3.obj`),
-      mtl: loadAsset(`/Drink/Soda/14025_Soda_Can_v3_l3.mtl`),
-      type: "OBJ",
-      scale: 0.01,
-      rotate: -90,
-    },
-  },
-  {
-    product_name: "Cupcake",
-    product_imgUrl: loadAsset("/Dessert/Cupcake/cupcake.png"), //img from Sung
-    threeD_imgUrl: "", //img with mtl and obj
-    price: 199,
-    description: "Colorful, moist, delicious cupcakes, with extra frosting. Yummy mmm good",
-    product_type: "Dessert",
-    assets: {
-      name: "cupcake",
-      source: loadAsset(`/Dessert/Cupcake/12187_Cupcake_v1_L3.obj`),
-      mtl: loadAsset(`/Dessert/Cupcake/12187_Cupcake_v1_L3.mtl`),
+      name: "pizza",
+      source: loadAsset(`/Entree/Pizza/Pizza.obj`),
+      mtl: loadAsset(`/Entree/Pizza/Pizza.mtl`),
       type: "OBJ",
       scale: 0.01,
       rotate: -90,
@@ -197,7 +111,8 @@ const productSeed = [
     product_imgUrl: loadAsset("/HighPolyFood/Burrito/042.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 1999,
-    description: "A burrito suizo means a burrito with melted cheese or a cheese sauce on top. “Suizo” means Swiss in Spanish (as in Swiss cheese), but the term is used to refer to any type of cheese.",
+    description:
+      "A burrito suizo means a burrito with melted cheese or a cheese sauce on top. “Suizo” means Swiss in Spanish (as in Swiss cheese), but the term is used to refer to any type of cheese.",
     product_type: "Entree",
     assets: {
       name: "burrito",
@@ -208,7 +123,7 @@ const productSeed = [
       rotate: 0,
     },
   },
-   {
+  {
     product_name: "Pretzel",
     product_imgUrl: loadAsset("/Appetizer/Pretzel/pretzel.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
@@ -230,11 +145,103 @@ const productSeed = [
     },
   },
   {
+    product_name: "Coca Cola",
+    product_imgUrl: loadAsset("/Drink/Soda/cokecan.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 199,
+    description: "Fizzy, cold, delicious",
+    product_type: "Drink",
+    assets: {
+      name: "cocacola",
+      source: loadAsset(`/Drink/Soda/14025_Soda_Can_v3_l3.obj`),
+      mtl: loadAsset(`/Drink/Soda/14025_Soda_Can_v3_l3.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: -90,
+    },
+  },
+  {
+    product_name: "Reuben",
+    product_imgUrl: loadAsset("/Entree/Reuben/rubensandwich.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 699,
+    description:
+      "With layers of mouthwatering meat, yummy fillings (of your choice), and crunchy vegetables, Arby’s reuben sandwich is truly an iconic dish! Who can say no to a sandwich stuffed with flavorful sauces, melted cheese, and luscious meat fillings? ",
+    product_type: "Entree",
+    assets: {
+      name: "reuben",
+      source: loadAsset(
+        `/Entree/Reuben/13931_Reuben_Sandwich_on_Plate_v2_L1.obj`
+      ),
+      mtl: loadAsset(`/Entree/Reuben/13931_Reuben_Sandwich_on_Plate_v2_L1.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: -90,
+    },
+  },
+];
+
+const productSeed = [
+  ...productSeedStrabucks,
+  ...productSeedStrabucks,
+  {
+    product_name: "Cupcake",
+    product_imgUrl: loadAsset("/Dessert/Cupcake/cupcake.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 199,
+    description:
+      "Colorful, moist, delicious cupcakes, with extra frosting. Yummy mmm good",
+    product_type: "Dessert",
+    assets: {
+      name: "cupcake",
+      source: loadAsset(`/Dessert/Cupcake/12187_Cupcake_v1_L3.obj`),
+      mtl: loadAsset(`/Dessert/Cupcake/12187_Cupcake_v1_L3.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: -90,
+    },
+  },
+  {
+    product_name: "Birthday Cake",
+    product_imgUrl: loadAsset("/Dessert/BirthdayCake/cake.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 1299,
+    description:
+      "This quadruple-layer cake isn't nearly as fussy to make as you might think. It starts out as a standard two-layer cake, then each layer is cut in half and stacked, with an easy filling in between the layers. The result is a moist cake that keeps well without refrigeration; looks spectacular when cut, and tastes even better than it looks!",
+    product_type: "Dessert",
+    assets: {
+      name: "birthdaycake",
+      source: loadAsset(`/Dessert/BirthdayCake/10868_birthday-cake_v3.obj`),
+      mtl: loadAsset(`/Dessert/BirthdayCake/10868_birthday-cake_v3.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: -90,
+    },
+  },
+  {
+    product_name: "Cabernet Sauvignon",
+    product_imgUrl: loadAsset("/Drink/Wine/wine.png"), //img from Sung
+    threeD_imgUrl: "", //img with mtl and obj
+    price: 1099,
+    description:
+      "Woodbridge by Robert Mondavi Cabernet Sauvignon Red Wine is a medium-bodied California wine that opens with enticing aromas of cherries, berries, rich cedar, brown sugar, and toast.",
+    product_type: "Drink",
+    assets: {
+      name: "red wine",
+      source: loadAsset(`/Drink/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.obj`),
+      mtl: loadAsset(`/Drink/Wine/14042_750_mL_Wine_Bottle_r_v1_L3.mtl`),
+      type: "OBJ",
+      scale: 0.01,
+      rotate: -90,
+    },
+  },
+  {
     product_name: "Pizza",
     product_imgUrl: loadAsset("/HighPolyFood/Pizza/035.png"), //img from Sung
     threeD_imgUrl: "", //img with mtl and obj
     price: 1999,
-    description: "San Marzano tomato sauce, fresh mozzarella fior di latte, fresh organic basil",
+    description:
+      "San Marzano tomato sauce, fresh mozzarella fior di latte, fresh organic basil",
     product_type: "Entree",
     assets: {
       name: "pizza",
@@ -304,8 +311,8 @@ async function seed() {
 
   const myDB = {
     users: (() => userSeed.map((user) => user))(),
-    products: (() => productSeed.map((product) => product))(),
     restaurants: (() => restaurantSeed.map((restaurant) => restaurant))(),
+    products: (() => productSeed.map((product) => product))(),
   };
   const { users, products, restaurants } = myDB;
 
@@ -320,22 +327,18 @@ async function seed() {
     returning: true,
   });
 
-//   const midwayPoint = Math.floor(allProducts.length / 2);
+  //   const midwayPoint = Math.floor(allProducts.length / 2);
 
-  for (let i = 0; i < allProducts.length-2; i=i+2) {
-//     if (i < midwayPoint) {
-//       await allProducts[i].setRestaurant(1);
-//     } else {
-//       await allProducts[i].setRestaurant(2);
-//     }
-//     await allProducts[i].setRestaurant(4);
-    await allProducts[i].setRestaurant(1);
-    await allProducts[i+1].setRestaurant(2);
-    await allProducts[i+2].setRestaurant(3);
-    await allProducts[i].setRestaurant(4);
-    await allProducts[i+1].setRestaurant(4);
+  for (let i = 0; i < productSeed.length; i++) {
+    await allProducts[i].setRestaurant(2);
+    if (productSeedStrabucks.length <= i) {
+      await allProducts[i].setRestaurant(4);
+    }
   }
 
+  console.log(`seeded ${users.length} users`);
+  console.log(`seeded successfully`);
+}
 
 /*
  We've separated the `seed` function from the `runSeed` function.
